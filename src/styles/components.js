@@ -72,7 +72,7 @@ export const StyledJumbo = styled.div`
   
   div{
     padding: 1rem;
-    width: 35vw;
+    width: 75vw;
   };
   & h2 {
     margin: 0;
@@ -89,6 +89,9 @@ export const StyledJumbo = styled.div`
   ${above.medium`
     padding: 2rem 4rem;
     flex-direction: row;
+    div{
+       width: 35vw;
+    }
     & h2 {
       font-size: 1rem;
     };
@@ -213,7 +216,9 @@ export const StyledProductDetail = styled.div`
   display: flex;
   flex-direction: column;
   text-align: justify;
-  height: 82vh;
+  height: 100%;
+  justify-content: center;
+
   img {
     width: 100%;
     object-fit: cover;
@@ -372,6 +377,10 @@ export const QtyButton = styled.button`
   padding: 0.4rem;
   background-color: transparent;
   border: 2px solid rgba(0, 0, 0, 0.1);
+  min-width: 50px;
+`
+export const QtyInput = styled.input`
+  text-align: center;
 `
 export const QtySelect = styled.div`
   display: flex;
@@ -469,4 +478,17 @@ export const Content = styled.div`
   ${above.large`
     padding-top: 4.5rem;
   `}
+`
+
+export const ProductImgContainer = styled.div`
+  max-width: 25em;
+  max-height: 25em;
+  height: 100%;
+  display: flex;
+`
+
+export const ProductImg = styled.img`
+  width: 100% !important;
+  height: auto !important;
+  align-self: center;
 `

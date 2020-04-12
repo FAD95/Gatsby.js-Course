@@ -9,6 +9,9 @@ import {
   Button,
   StyledProductDetail,
   QtySelect,
+  QtyInput,
+  ProductImg,
+  ProductImgContainer,
 } from "../styles/components"
 import { SEO, Stars } from "./"
 export default function ProductDetail({
@@ -26,7 +29,9 @@ export default function ProductDetail({
   return (
     <StyledProductDetail>
       <SEO title={name}></SEO>
-      <img src={metadata.img} alt={name} />
+      <ProductImgContainer>
+        <ProductImg src={metadata.img} alt={name} />
+      </ProductImgContainer>
       <div>
         <Tag>Popular</Tag>
         <h2>{name}</h2>
@@ -49,7 +54,7 @@ export default function ProductDetail({
           <QtyButton onClick={() => (qty > 1 ? setQty(qty - 1) : null)}>
             -
           </QtyButton>
-          <input type="text" disabled value={qty} />
+          <QtyInput type="text" disabled value={qty} />
           <QtyButton onClick={() => setQty(qty + 1)}>+</QtyButton>
         </QtySelect>
         <Button onClick={handleSubmit}>Agregar al carrito</Button>
